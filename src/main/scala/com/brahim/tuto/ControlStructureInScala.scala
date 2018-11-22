@@ -39,7 +39,7 @@ object ControlStructureInScala {
       */
     var  f = new FileReader("input.txt")
     try {
-     
+
       // Use and close file
     } catch {
       case ex: FileNotFoundException => // Handle missing file
@@ -49,5 +49,24 @@ object ControlStructureInScala {
     }
 
 
+    /*
+        Match expressions  like Switch
+     */
+
+    // there's no break in  the match it's implicit
+    val firstArg = if (args.length > 0) args(0) else ""
+    firstArg match {
+      case "salt" => println("pepper")
+      case "chips" => println("salsa")
+      case "eggs" => println("bacon")
+      case _ => println("huh?")
+    }
+
+  }
+
+  def f(): Int = try {
+                 return 1
+        } finally {
+    return 2
   }
 }
